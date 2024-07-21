@@ -12,8 +12,8 @@ transform = transforms.Compose([
     transforms.RandomAffine(degrees=(0, 20), translate=(0, 0.2), scale=(0.7, 1)), # Randomly rotate (+- 20 degrees), translate and scale the image
     transforms.Grayscale(num_output_channels=3), # 3 channels
     transforms.Lambda(lambda x: x + torch.randn_like(x) * 0.1),  # Add noise
-    transforms.Normalize(mean=(0.5,0.5,0.5), std=(0.5,0.5,0.5)) # Normalize the data, so that the gradients are more consistent, thus making it easier to train
     transforms.ToTensor(), # Convert image to a tensor
+    transforms.Normalize(mean=(0.5,0.5,0.5), std=(0.5,0.5,0.5)) # Normalize the data, so that the gradients are more consistent, thus making it easier to train
 ])
 transformtest = transforms.Compose([
     transforms.Grayscale(num_output_channels=____),
